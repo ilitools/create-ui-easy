@@ -85,7 +85,8 @@ class Creator {
   init = async () => {
     let ca = await initCA()
     let cert = await initCert(ca)
-    writeCert(cert.key, cert.cert)
+    // 写入文件
+    // writeCert(cert.key, cert.cert)
     let res
     try {
       res = await prompts(creatorPrompt.step0({projectName: this.projectName}), {onSubmit: this.promptsOnSubmit, onCancel: this.promptsOnCancel})
